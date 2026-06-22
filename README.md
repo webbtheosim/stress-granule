@@ -31,7 +31,7 @@ with RNA and stripping the scaffold that maintains its multiphasic architecture.
 | Quantity | Value |
 |---|---|
 | Force field | MPiPi (residue-resolution; one bead per amino acid / nucleotide) |
-| Biopolymer species (7) | TDP43, FUS, TIA1, G3BP1, RNA, PABP1, TTP (**3,594 residues** total) |
+| Biopolymer species (7) | TDP43 (16 copies, 414 amino acids), FUS (16 copies, 526 amino acids), TIA1 (16 copies, 386 amino acids), G3BP1 (33 copies, 466 amino acids), PABP1 (16 copies, 636 amino acids), TTP (16 copies, 326 amino acids), RNA (21 copies, 840 nucleic acids) (**134 biopolymers** and **69,626** total residues) |
 | System categories | **SG** (control), **DSM** (10 dissolving small molecules), **NDSM** (10 non-dissolving) |
 | Temperatures | 285, 290, 295, 300, 305, 310, 315 K (300 K = reference). SG run at all 7; small molecules at 285 / 300 / 315 K |
 | Box | cubic, 2400 Å (0.24 µm) edge |
