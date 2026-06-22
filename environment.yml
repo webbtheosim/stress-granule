@@ -1,0 +1,19 @@
+name: sg
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - numpy=1.26.4
+  - scipy=1.13.1
+  - pandas=2.3.1
+  - matplotlib=3.9.4
+  - seaborn=0.13.2
+  - scikit-learn=1.6.1
+  - tqdm=4.67.1
+  - colorcet=3.1.0
+  - pillow=11.3.0
+  - pytest=8.3.5
+  - pip:
+      - MDAnalysis==2.4.2
+      - pymbar==4.0.3

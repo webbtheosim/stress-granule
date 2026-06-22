@@ -1,0 +1,9 @@
+cg_N_acetylenapthacene_b1	cg_N_acetylenapthacene_b2	6.057588
+cg_N_anacardic_b1	cg_N_anacardic_b2	9.615135
+cg_Y_anisomycin_b1	cg_Y_anisomycin_b2	4.621559
+cg_Y_daunorubicin_b1	cg_Y_daunorubicin_b2	3.508822
+cg_Y_daunorubicin_b2	cg_Y_daunorubicin_b3	4.224615
+cg_Y_daunorubicin_b3	cg_Y_daunorubicin_b4	4.810452
+cg_Y_mitoxantrone_b1	cg_Y_mitoxantrone_b2	6.872673
+cg_Y_pyrivinium_b1	cg_Y_pyrivinium_b2	9.303868
+cg_Y_quinicrine_b1	cg_Y_quinicrine_b2	6.145659

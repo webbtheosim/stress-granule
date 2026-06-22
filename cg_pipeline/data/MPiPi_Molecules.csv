@@ -1,0 +1,25 @@
+Molecules,SMILES,Mass
+Alanine,CC(C(=O)O)N,131.18220
+Arginine,CC(C(=O)N)NC(=N)N,57.04220
+Asparagine,C(C(=O)O)NC(=N)N,128.18260
+Aspartic acid,CC(C(=O)O)OC(=O)O,101.08630
+Cysteine,C(C(=O)S)N,156.17880
+Glutamic acid,C(C(=O)O)NC(=O)O,71.07034
+Glutamine,C(C(=O)O)NC(=N)N,115.08440
+Glycine,C(C(=O)O)N,129.08250
+Histidine,C1C(C(=O)N)NC(=N)C(C(=O)N)N1,163.17780
+Isoleucine,CC(C(=O)O)CC,99.05650
+Leucine,CC(C(=O)O)C(C)C,113.18460
+Lysine,CC(C(=O)N)NC(=N)N,128.08260
+Methionine,C(C(=O)S)SC,186.17470
+Phenylalanine,C1(C(C(C(C(C(=O)O)O)O)O)C)C(C(=O)O)N1,147.18000
+Proline,C1C(C(=O)O)CC(C(=O)O)N1,87.06820
+Serine,C(C(=O)O)N,137.08140
+Threonine,C(C(=O)O)NC(C(=O)O)O,114.08450
+Tryptophan,C1(C(C(C(C(C(=O)O)O)O)O)C)C(C(C(=O)O)N)N1,97.10680
+Tyrosine,C1(C(C(C(C(C(=O)O)O)O)O)C)C(C(=O)O)N1,103.08450
+Valine,CC(C(=O)O)C,113.18460
+Adenine,C1=C(C(=N)N)N=C(C(=O)N)N=C1,329.2
+Cytosine,C1=C(C(=O)N)N=C(C(=O)O)N=C1,305.2
+Guanine,C1=C(C(=N)N)N=C(C(=N)N)N=C1,345.2
+Uracil,C1=C(C(=O)O)N=C(C(=O)O)N=C1,306.2

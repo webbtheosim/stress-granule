@@ -1,0 +1,17 @@
+# Core cg_pipeline dependencies (QSPR, mixing, parity, plots).
+# Python 3.10+ recommended.
+numpy>=1.21
+pandas>=1.3
+scikit-learn>=1.0
+matplotlib>=3.4
+seaborn>=0.12
+scipy>=1.9
+
+# Molecular descriptors. RDKit installs most reliably via conda
+# (`conda install -c conda-forge rdkit mordred`); rdkit-pypi is the pip fallback.
+rdkit
+mordred>=1.2
+
+# Optional, for regenerating coarse-graining assets only:
+#   GBCG (graph-based coarse-graining) — clone separately into ./GBCG (see README)
+#   OpenBabel command-line tools

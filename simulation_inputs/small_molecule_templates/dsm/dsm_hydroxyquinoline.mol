@@ -1,0 +1,12 @@
+# LAMMPS Molecule Input File
+
+1   atoms
+0   bonds
+
+Coords
+
+1   -0.000000 -0.011000 0.001000 
+
+Types
+
+1    46

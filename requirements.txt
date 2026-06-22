@@ -1,0 +1,15 @@
+# Python >= 3.9  (developed and tested on Python 3.9 / conda env "sg")
+# Versions below are the exact ones used to produce the published results.
+# Looser pins (>=) generally work, but MDAnalysis in particular is API-sensitive.
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.3.1
+matplotlib==3.9.4
+seaborn==0.13.2
+MDAnalysis==2.4.2
+scikit-learn==1.6.1
+pymbar==4.0.3
+tqdm==4.67.1
+colorcet==3.1.0
+Pillow==11.3.0
+pytest==8.3.5

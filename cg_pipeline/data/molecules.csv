@@ -1,0 +1,15 @@
+Molecules,SMILES,Mass
+aceticacid_b1,C(=O)(C)O,60.05268
+aniline_b1,c1c(cccc1)N,93.12849
+benzonitrile_b1,c1(ccccc1)C#N,103.12355
+cisplatin_b1,N.N.Cl[Pt]Cl,265.99600
+cyclopentanol_b1,C1CCC(C1)O,86.13410
+dioxane_b1,C1COCCO1,88.10656
+furan_b1,c1ccoc1,68.07528
+methylpropane_b1,C(C)(C)C,58.12370
+nitrobenzene_b1,C1=CC=C(C=C1)[N+](=O)[O-],123.11135
+phenol_b1,c1(ccccc1)O,94.11322
+pyrrole_b1,[nH]1cccc1,67.09055
+styrene_b1,c1(C=C)ccccc1,104.15176
+thiophenol_b1,c1cccc(c1)S,110.17382
+toluene_b1,c1c(C)cccc1,92.14076

@@ -1,0 +1,67 @@
+# ------------------------------------------------------------------
+# This is a CODE-ONLY repository. Simulation trajectories, per-frame
+# analysis products, and rendered figures are large and regenerable,
+# and are never committed. (The committed data/ CSVs and
+# simulation_inputs/ are explicit exceptions, tracked on purpose.)
+# ------------------------------------------------------------------
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+env/
+
+# --- Local data symlinks (machine-specific; create with setup_data_links.sh) ---
+# These point at the consolidated trajectory-analysis products on the host and
+# are deliberately NOT committed so the repo stays portable. Run
+# `bash setup_data_links.sh` (optionally with DATA_ROOT=...) to recreate them.
+/PYTHON_ANALYSIS
+/PYTHON_SIMULATIONS
+/SIMULATION
+
+# --- Analysis run directories & per-frame outputs (regenerated) ---
+# NOTE: pipeline outputs land at the repo root or under analysis/ when run there.
+# The committed simulation_inputs/lammps_scripts/TEMP_* trees are INPUTS, never matched here.
+/TEMP_*/
+/analysis/TEMP_*/
+ANALYSIS_SG/
+ANALYSIS_DSM/
+ANALYSIS_NDSM/
+ANALYSIS_*_AVE/
+CLASSIFY_*/
+CORRELATION_CLASSIFY_*/
+RESULTS/
+SUMMARY/
+
+# --- Rendered figures (final figures live with the manuscript, not here) ---
+FIGURES/
+FIGURES_SI/
+DOMAIN_CONTACT_MAPS/
+
+# --- Large binary trajectory / restart / intermediate artifacts ---
+*.lammpstrj
+*.dcd
+*.xtc
+*.trr
+*.restart.*
+*.npz
+*.npy
+log.lammps
+print.statements
+output_*/
+
+# --- Logs ---
+logs/
+*.log
+slurm-*.out
+nohup.out
+
+# --- OS / editor cruft ---
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

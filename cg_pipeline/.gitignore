@@ -1,0 +1,49 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# --- OS / editors ---
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# --- Optional third-party dependency (install separately; see README) ---
+GBCG/
+
+# --- Large legacy data and timestamped run archives (regenerable; not required) ---
+GENDATA/
+RUNS/
+
+# --- Legacy helpers (depend on GENDATA / GBCG; not part of the published workflow) ---
+CG_Script.py
+GenSystem.py
+GenSG.py
+
+# --- Generated LAMMPS system files + trained-model binaries ---
+sys.data
+sys.settings
+*.pkl
+evec.dat*
+
+# --- Generated coarse-grain assets (produced by the optional GBCG step) ---
+Bead_PDB_Files/
+Bead_SMI_Files/
+CG_PDB_Files/
+CG_MOL_Files/
+map_files/
+pdb_files/
+
+# --- Generated pipeline outputs (recreated by run_full_pipeline.py) ---
+single_parameters.csv
+parameters.csv
+sm_parameters.csv
+SM_SM_Parameters_JK.csv
+mix_params_JK.txt
+
+# --- GBCG reduction logs ---
+summary.txt
+typing.summary.txt

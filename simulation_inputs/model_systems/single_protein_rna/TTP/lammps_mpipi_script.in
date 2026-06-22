@@ -1,0 +1,112 @@
+#===========================================================
+# VARIABLES
+#===========================================================
+variable        data_name      	index    	sys.data
+variable        settings_name  	index    	sys.settings
+variable 	    temperature 	equal 		300
+variable 	    pressure 	    equal 		1
+variable 	    randomSeed 	    equal 		16000
+
+#===========================================================
+# GENERAL PROCEDURES
+#===========================================================
+units       real
+dimension   3
+boundary    p p p
+atom_style  full
+
+#===========================================================
+# FORCE FIELD DEFINITION
+#===========================================================
+pair_style  	  hybrid/overlay wf/cut 25.0 coul/debye 0.126 0.0
+bond_style  	  harmonic
+dielectric  	  80.0
+special_bonds 	  fene
+neighbor          3.5 multi
+neigh_modify  	  every 10 delay 0
+comm_style    	  tiled
+
+#===========================================================
+# SETUP SYSTEM
+#===========================================================
+read_data  	${data_name}
+
+include    	${settings_name}
+#===========================================================
+# RUN PARAMETERS
+#===========================================================
+# TIME
+timestep      	20
+velocity        all create ${temperature} ${randomSeed}
+
+#===========================================================
+# OUTPUTS
+#===========================================================
+# THERMO
+thermo        10000
+thermo_style  custom step pe press ke temp lx ly lz pzz spcpu density
+thermo_modify flush yes
+
+# COORDINATES
+dump          1 all custom 10000 resultTTP.lammpstrj id mol type q xu yu zu
+dump_modify   1 sort id
+
+# RESTART
+restart 1000000 simTTP.restart
+
+# SURFACE TENSION
+compute       cluster all cluster/atom 20.0
+compute       cmol all chunk/atom molecule
+compute	      reduce all reduce/chunk cmol min c_cluster
+compute       spread all chunk/spread/atom cmol c_reduce
+compute       llps all chunk/atom c_spread compress yes
+compute       rad all gyration/chunk llps tensor
+compute	      radgyr all gyration/chunk llps
+compute	      ccom all com/chunk llps
+compute       prop all property/chunk llps count
+fix           fxrgt all ave/time 200000 1 200000 c_rad[1] c_rad[2] c_rad[3] c_rad[4] c_rad[5] c_rad[6] file llps_rg_tensor_TTP.out mode vector
+fix           fxrg all ave/time 200000 1 200000 c_radgyr c_prop file llps_rg_TTP.out mode vector
+fix           fxcom all ave/time 200000 1 200000 c_ccom[*] file llps_com_TTP.out mode vector
+
+# Viscosity
+compute       stress all stress/atom NULL
+compute       msd all displace/atom
+dump          stress_msd all custom 200000 stress_msd_TTP.out id type x y z mol c_stress[*] c_msd[*]
+dump_modify   stress_msd sort id
+
+# Diffusivity
+compute       molmsd all chunk/atom molecule
+compute       mmsd all msd/chunk molmsd
+compute	      commsd all com/chunk molmsd
+fix           fxmsd all ave/time 200000 1 200000 c_mmsd[*] c_commsd[*] file msd_TTP.out mode vector
+
+
+#===========================================================
+# RUN SIMULATION
+#===========================================================
+
+# NVE
+print "RUN NVE/LIMIT" append print.statements
+fix             fxnve   	    all nve/limit 0.1
+fix             fxmom           all momentum 10000 linear 1 1 1 angular
+fix             fxCOM           all recenter 300.0 300.0 300.0
+fix             fxBal           all balance 10000 1.2 shift xyz 20 1.2
+run 100000
+unfix fxnve
+unfix fxCOM
+
+# Droplet Formation
+print "RUN FIX CENTER" append print.statements
+fix             fxnvt           all nvt temp ${temperature} ${temperature} 100.00
+fix             fxcenter 	    all drag 300.0 300.0 300.0 0.2 800.0
+run 100000
+unfix fxcenter
+unfix fxnvt
+
+# NVT
+print "PRODUCTION RUN NVT" append print.statements
+fix             fxnvt           all nvt temp ${temperature} ${temperature} 100.00
+compute         radialchunk     all chunk/atom bin/sphere 300 300 300 0.0 1200.0 40
+fix             densityregions  all ave/chunk 1000 100 200000 radialchunk density/mass file density_spheres_TTP.dat
+fix             fxCOM           all recenter 300.0 300.0 300.0
+run 8000000

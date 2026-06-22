@@ -1,0 +1,14 @@
+epsilon
+LB
+
+sigma
+LB
+
+mu
+G
+
+rc
+A
+
+v
+G
