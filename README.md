@@ -343,12 +343,17 @@ environment.
 If you use this code or the model, please cite:
 
 ```bibtex
-@article{kaplan_webb_stress_granule,
-  title   = {Interactions Underlying Stress Granule Structure and Therapeutic Dissolution},
-  author  = {Kaplan, Jay L. and Webb, Michael A.},
-  journal = {Cell Reports Physical Science},
-  year    = {2026},
-  note    = {In revision}
+@article {kaplan_webb_stress_granule,
+	author = {Kaplan, Jay L and Webb, Michael A},
+	title = {Interactions Underlying Stress Granule Structure and Therapeutic Dissolution},
+	elocation-id = {2025.03.10.642463},
+	year = {2026},
+	doi = {10.1101/2025.03.10.642463},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Stress granules are biomolecular condensates composed of RNA and proteins that form in response to stress; their dysregulation is implicated in neurodegenerative diseases. In this study, we develop a minimal stress-granule model, composed of RNA and six key proteins associated with neurodegenerative conditions, and study its characteristics using coarse-grained molecular dynamics simulations. We find that RNA is essential to form stable condensates in these biopolymer mixtures, while underlying protein-protein interactions result in heterogeneous, multiphasic architectures. Inspired by therapeutic applications, we then challenge the stability of these condensates in the presence of twenty distinct small molecules. Simulation-derived properties classify compounds as {\textquoteleft}{\textquoteleft}dissolving{\textquoteright}{\textquoteright} or {\textquoteleft}{\textquoteleft}non-dissolving{\textquoteright}{\textquoteright} with 85\% agreement with experimental findings. Further analysis suggests that dissolving compounds disrupt stress granule structure by preferentially associating with RNA and stripping the scaffold that maintains its multiphasic architecture. These insights advance understanding of stress granule stability and demonstrate modeling strategies for screening of therapeutic candidates.},
+	URL = {https://www.biorxiv.org/content/early/2026/06/20/2025.03.10.642463},
+	eprint = {https://www.biorxiv.org/content/early/2026/06/20/2025.03.10.642463.full.pdf},
+	journal = {bioRxiv}
 }
 ```
 
